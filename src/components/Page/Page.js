@@ -1,12 +1,13 @@
 import React from "react";
-import Headline from "./Headline";
-import Subhead from "./Subhead";
-import Action from "./Action";
+import Headline from "../Headline/Headline";
+import Subhead from "../Subhead/Subhead";
+import Action from "../Action/Action";
+import classes from './Page.module.css'
 
 const page = props => {
   if (!props.data) {
     return (
-      <div>
+      <div className={classes.Container}>
         <Headline />
         <Subhead />
         <Action />
@@ -14,7 +15,7 @@ const page = props => {
     );
   } else {
     return (
-      <div>
+      <div className={classes.Container}>
         <Headline text={props.data.headline} />
         <Subhead text={props.data.subhead} />
         <Action text={props.data.cta} />
